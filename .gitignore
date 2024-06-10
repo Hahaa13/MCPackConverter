@@ -1,0 +1,7 @@
+convert/
+*pyc
+
+.vscode/
+.idx/
+
+.env

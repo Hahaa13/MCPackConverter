@@ -21,11 +21,11 @@ class MCPackConverter:
         for folder in ("convert/", "bedrock/", "caches/"):
             if os.path.exists(folder):
                 shutil.rmtree(folder)
-            os.makedirs(folder)
+            os.makedirs(folder, exist_ok=True)
         else:
             self.logger.warning("Clear old convert file")
 
-        pack = PackLoader.load(self.logger, self.javapack, "convert/pack.zip")
+        pack = PackLoader.load(self.logger, self.javapack, "convert/")
 
 if __name__ == "__main__":
     dotenv.load_dotenv()

@@ -3,6 +3,7 @@ import dotenv
 import shutil
 from urllib.request import urlopen
 from zipfile import ZipFile
+from converter.gen import Gen
 from utils.packloader import PackLoader
 from utils.logger import Logger
 
@@ -25,7 +26,9 @@ class MCPackConverter:
         else:
             self.logger.warning("Clear old convert file")
 
-        pack = PackLoader.load(self.logger, self.javapack, "convert/")
+        PackLoader.load(self.logger, self.javapack, "convert/")
+        gen = Gen("bedrock", "convert", self.logger)
+        gen.packinfo()
 
 if __name__ == "__main__":
     dotenv.load_dotenv()

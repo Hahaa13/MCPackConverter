@@ -1,4 +1,7 @@
 convert/
+bedrock/
+caches/
+
 *pyc
 
 .vscode/
